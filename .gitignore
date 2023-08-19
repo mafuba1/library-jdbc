@@ -4,13 +4,29 @@ target/
 !**/src/test/**/target/
 
 ### IntelliJ IDEA ###
+.idea/**/contentModel.xml
 .idea/modules.xml
 .idea/jarRepositories.xml
 .idea/compiler.xml
+.idea/**/dataSources/
+.idea/**/dataSources.ids
+.idea/**/dataSources.local.xml
+.idea/**/sqlDataSources.xml
+.idea/**/dynamic.xml
+.idea/**/uiDesigner.xml
+.idea/**/dbnavigator.xml
 .idea/libraries/
 *.iws
 *.iml
 *.ipr
+.idea/**/workspace.xml
+.idea/artifacts
+.idea/*.iml
+.idea/modules
+*.ipr.idea/**/tasks.xml
+.idea/**/usage.statistics.xml
+.idea/**/dictionaries
+.idea/**/shelf
 
 ### Eclipse ###
 .apt_generated
