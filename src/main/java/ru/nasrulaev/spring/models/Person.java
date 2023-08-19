@@ -3,6 +3,7 @@ package ru.nasrulaev.spring.models;
 import jakarta.validation.constraints.*;
 
 public class Person {
+    private int id;
 
     @NotBlank(message = "This field must be filled")
     @Pattern(regexp = "^[A-ZА-Яа-я][a-zа-я]+(?: [A-ZА-Я][a-zа-я]*){0,2}$")
@@ -17,7 +18,8 @@ public class Person {
     public Person() {
     }
 
-    public Person(String fullName, int birthDate) {
+    public Person(int id, String fullName, int birthDate) {
+        this.id = id;
         this.fullName = fullName;
         this.birthYear = birthDate;
     }
@@ -36,5 +38,13 @@ public class Person {
 
     public void setBirthYear(int birthYear) {
         this.birthYear = birthYear;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }
