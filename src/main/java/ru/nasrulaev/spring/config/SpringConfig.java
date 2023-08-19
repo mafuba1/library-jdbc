@@ -1,4 +1,4 @@
-package ru.nasrulaev.spring;
+package ru.nasrulaev.spring.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
