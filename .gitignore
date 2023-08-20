@@ -1,19 +1,30 @@
 target/
+
+### Eclipse ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### NetBeans ###
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
 
-### IntelliJ IDEA ###
-.idea/**/contentModel.xml
+### intellij idea ###
+.idea/**/contentmodel.xml
 .idea/modules.xml
-.idea/jarRepositories.xml
+.idea/jarrepositories.xml
 .idea/compiler.xml
-.idea/**/dataSources/
-.idea/**/dataSources.ids
-.idea/**/dataSources.local.xml
-.idea/**/sqlDataSources.xml
+.idea/**/datasources/
+.idea/**/datasources.ids
+.idea/**/datasources.local.xml
+.idea/**/sqldatasources.xml
 .idea/**/dynamic.xml
-.idea/**/uiDesigner.xml
+.idea/**/uidesigner.xml
 .idea/**/dbnavigator.xml
 .idea/libraries/
 *.iws
@@ -27,17 +38,6 @@ target/
 .idea/**/usage.statistics.xml
 .idea/**/dictionaries
 .idea/**/shelf
-
-### Eclipse ###
-.apt_generated
-.classpath
-.factorypath
-.project
-.settings
-.springBeans
-.sts4-cache
-
-### NetBeans ###
 /nbproject/private/
 /nbbuild/
 /dist/
@@ -53,4 +53,5 @@ build/
 ### Mac OS ###
 .DS_Store
 
-src/main/resources/database.properties
+**/src/main/resources/
+/.idea/jarRepositories.xml
