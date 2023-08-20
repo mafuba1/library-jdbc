@@ -11,6 +11,8 @@ import ru.nasrulaev.spring.dao.PersonDAO;
 import ru.nasrulaev.spring.models.Person;
 import ru.nasrulaev.spring.validators.PersonValidator;
 
+import java.util.Optional;
+
 @Controller
 @RequestMapping("/people")
 public class PeopleController {
@@ -37,7 +39,12 @@ public class PeopleController {
     @GetMapping("/{id}")
     public String show(@PathVariable("id") int id,
                        Model model) {
-        model.addAttribute("person", personDAO.show(id));
+        Optional<Person> person = personDAO.show(id);
+
+        if (person.isEmpty())
+            return "redirect:/people";
+
+        model.addAttribute("person", person);
         model.addAttribute("heldBooks", bookDAO.index(id));
 
         return "people/show";
@@ -64,8 +71,12 @@ public class PeopleController {
 
     @GetMapping("/{id}/edit")
     public String edit(Model model, @PathVariable("id") int id) {
-        model.addAttribute("person", personDAO.show(id));
+        Optional<Person> person = personDAO.show(id);
 
+        if (person.isEmpty())
+            return "redirect:/people";
+
+        model.addAttribute("person", person);
         return "people/edit";
     }
 
