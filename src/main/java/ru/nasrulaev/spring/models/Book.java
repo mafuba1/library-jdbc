@@ -18,14 +18,17 @@ public class Book {
     @NotNull(message = "This field must be filled")
     private int publicationYear;
 
+    private Integer holderId;
+
     public Book() {
     }
 
-    public Book(int id, String authorName, String bookName, int publicationYear) {
+    public Book(int id, String authorName, String bookName, int publicationYear, Integer holderId) {
         this.id = id;
         this.authorName = authorName;
         this.bookName = bookName;
         this.publicationYear = publicationYear;
+        this.holderId = holderId;
     }
 
     public String getAuthorName() {
@@ -58,5 +61,13 @@ public class Book {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public Integer getHolderId() {
+        return holderId;
+    }
+
+    public void setHolderId(Integer holderId) {
+        this.holderId = holderId;
     }
 }
