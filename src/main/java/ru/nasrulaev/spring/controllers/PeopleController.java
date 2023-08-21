@@ -43,7 +43,7 @@ public class PeopleController {
         if (person.isEmpty())
             return "redirect:/people";
 
-        model.addAttribute("person", person);
+        model.addAttribute("person", person.get());
         model.addAttribute("heldBooks", bookDAO.index(id));
 
         return "people/show";
@@ -74,7 +74,7 @@ public class PeopleController {
         if (person.isEmpty())
             return "redirect:/people";
 
-        model.addAttribute("person", person);
+        model.addAttribute("person", person.get());
         return "people/edit";
     }
 

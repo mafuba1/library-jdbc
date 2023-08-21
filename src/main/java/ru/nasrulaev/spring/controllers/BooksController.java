@@ -39,7 +39,7 @@ public class BooksController {
         if (book.isEmpty())
             return "redirect:/books";
 
-        model.addAttribute("book", book);
+        model.addAttribute("book", book.get());
 
         Optional<Person> holder = bookDAO.showHolder(id);
         if (holder.isPresent()) {
@@ -73,7 +73,7 @@ public class BooksController {
         if (book.isEmpty())
             return "redirect:/books";
 
-        model.addAttribute("book", book);
+        model.addAttribute("book", book.get());
         return "books/edit";
     }
 
