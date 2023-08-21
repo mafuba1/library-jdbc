@@ -6,7 +6,7 @@ public class Person {
     private int id;
 
     @NotBlank(message = "This field must be filled")
-    @Pattern(regexp = "^[A-ZА-Яа-я][a-zа-я]+(?: [A-ZА-Я][a-zа-я]*){1,2}$", message = "Please input a valid name")
+    @Pattern(regexp = "^[A-ZА-Яа-я][a-zа-я]+(?: [A-ZА-Я][a-zа-я]*){1,2}$", message = "Please input a valid full name")
     private String fullName;
 
     @NotNull(message = "This field must be filled")
