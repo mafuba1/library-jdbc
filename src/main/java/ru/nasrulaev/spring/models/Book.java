@@ -9,7 +9,7 @@ public class Book {
     private int id;
 
     @NotBlank(message = "This field must be filled")
-    @Pattern(regexp = "^[A-ZА-Яа-я][a-zа-я]+(?: [A-ZА-Я][a-zа-я]*){0,2}$")
+    @Pattern(regexp = "^[A-ZА-Яа-я][a-zа-я]+(?: [A-ZА-Я][a-zа-я]*){1,2}$", message = "Please input a valid full name")
     private String authorName;
 
     @NotBlank(message = "This field must be filled")
