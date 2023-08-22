@@ -38,13 +38,13 @@ public class BookDAO {
     }
 
     public void save(Book book) {
-        jdbcTemplate.update("INSERT INTO book (author_name, book_name, publication_year) VALUES (?, ?, ?)",
-                book.getAuthorName(), book.getBookName(), book.getPublicationYear());
+        jdbcTemplate.update("INSERT INTO book (author_name, title, publication_year) VALUES (?, ?, ?)",
+                book.getAuthorName(), book.getTitle(), book.getPublicationYear());
     }
 
     public void update(int id, Book updatedBook) {
-        jdbcTemplate.update("UPDATE book SET author_name=?, book_name=?, publication_year=? WHERE book_id=?",
-                updatedBook.getAuthorName(), updatedBook.getBookName(), updatedBook.getPublicationYear(), id);
+        jdbcTemplate.update("UPDATE book SET author_name=?, title=?, publication_year=? WHERE book_id=?",
+                updatedBook.getAuthorName(), updatedBook.getTitle(), updatedBook.getPublicationYear(), id);
     }
 
     public void delete(int id) {

@@ -6,7 +6,7 @@
 </head>
 <body>
 
-<p th:text="${book.getBookName()} + ', ' + ${book.getAuthorName()} + ', ' + ${book.getPublicationYear()}"/>
+<p th:text="${book.getTitle()} + ', ' + ${book.getAuthorName()} + ', ' + ${book.getPublicationYear()}"/>
 
 <form th:method="PATCH" th:action="@{/books/{id}/holder(id=${book.getId()})}"
       th:switch="${book.getHolderId() == null}" th:object="${book}">
@@ -18,7 +18,7 @@
             <option th:each="person : ${people}" th:value="${person.getId()}" th:text="${person.getFullName()}"/>
         </select>
         <input type="hidden" th:field="*{authorName}">
-        <input type="hidden" th:field="*{bookName}">
+        <input type="hidden" th:field="*{title}">
         <input type="hidden" th:field="*{publicationYear}">
 
         <input type="submit" value="Назначить книгу">
@@ -29,7 +29,7 @@
         <a th:href="@{/people/{id}(id=${holder.getId()})}"
            th:text="${holder.getFullName()}"/>
         <input type="hidden" th:field="*{authorName}">
-        <input type="hidden" th:field="*{bookName}">
+        <input type="hidden" th:field="*{title}">
         <input type="hidden" th:field="*{publicationYear}">
         <input type="submit" value="Освободить книгу">
     </div>
