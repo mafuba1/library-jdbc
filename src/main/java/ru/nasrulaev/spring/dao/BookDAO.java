@@ -33,7 +33,7 @@ public class BookDAO {
     }
 
     public Optional<Person> showHolder(int id) {
-        return jdbcTemplate.query("SELECT person.full_name FROM book JOIN person ON person.user_id = book.holder_id" +
+        return jdbcTemplate.query("SELECT person.* FROM book JOIN person ON person.user_id = book.holder_id" +
                 " WHERE book_id=?", new PersonMapper(), id) .stream().findAny();
     }
 
