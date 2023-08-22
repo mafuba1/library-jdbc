@@ -91,10 +91,10 @@ public class BooksController {
     public String changeHolder(@Valid @ModelAttribute("book") Book book, BindingResult bindingResult,
                                @PathVariable("id") int id) {
         if (bindingResult.hasErrors())
-            return "books/show";
+            return "redirect:/books/"+id;
 
         bookDAO.changeHolder(id, book.getHolderId());
-        return "books/show";
+        return "redirect:/books/"+id;
     }
 
     @DeleteMapping("/{id}")
